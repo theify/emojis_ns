@@ -58,11 +58,11 @@ class Emoji {
   final EmojiSubgroup emojiSubgroup;
   final bool modifiable;
   final List<String> keywords;
-  List<int> _runes;
+  List<int>? _runes;
 
   /// Emoji class.
   /// [name] of emoji. [char] and character of emoji. [shortName] and a digest name of emoji, [emojiGroup] is emoji's group and [emojiSubgroup] is emoji's subgroup. [keywords] list of keywords for emoji. [modifiable] `true` if emoji has skin.
-  Emoji({this.name, this.char, this.shortName, this.emojiGroup, this.emojiSubgroup, this.keywords = const [], this.modifiable = false});
+  Emoji({required this.name, required this.char, required this.shortName, required this.emojiGroup, required this.emojiSubgroup, this.keywords = const [], this.modifiable = false});
 
   /// Runes of Emoji Character
   List<int> get charRunes {
@@ -95,18 +95,18 @@ class Emoji {
 
   /// Returns Emoji by [char] and character
   factory Emoji.byChar(String char){
-    return _emojis.firstWhere((Emoji emoji) => emoji.char == char, orElse: () => null);
+    return _emojis.firstWhere((Emoji emoji) => emoji.char == char, orElse: () => null as Emoji);
   }
 
   /// Returns Emoji by [name]
   factory Emoji.byName(String name){
     name = name.toLowerCase(); // todo: searchable name
-    return _emojis.firstWhere((Emoji emoji) => emoji.name == name, orElse: () => null);
+    return _emojis.firstWhere((Emoji emoji) => emoji.name == name, orElse: () => null as Emoji);
   }
 
   /// Returns Emoji by [name] as short name.
   factory Emoji.byShortName(String name){
-    return _emojis.firstWhere((Emoji emoji) => emoji.char == name, orElse: () => null);
+    return _emojis.firstWhere((Emoji emoji) => emoji.char == name, orElse: () => null as Emoji);
   }
 
   /// Returns list of Emojis in a same [group]

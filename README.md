@@ -6,8 +6,8 @@ This 📦 contain all 🆕 [Unicode 13 Emojis](https://unicode.org/emoji/charts)
 ## 🛠️ Usage
 0️⃣ Import
 ```dart
-import 'package:emojis/emojis.dart'; // to use Emoji collection
-import 'package:emojis/emoji.dart'; // to use Emoji utilities
+import 'package:emojis_ns/emojis.dart'; // to use Emoji collection
+import 'package:emojis_ns/emoji.dart'; // to use Emoji utilities
 ```
 1️⃣ Use
 ```dart
