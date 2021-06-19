@@ -1,4 +1,4 @@
-import 'package:emojis_ns/emojis.dart';
+import 'package:emojis_ns/emojis_ns.dart';
 import 'package:emojis_ns/emoji_ns.dart';
 
 main() {
