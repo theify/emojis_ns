@@ -1,5 +1,5 @@
 import 'package:emojis_ns/emojis.dart';
-import 'package:emojis_ns/emoji.dart';
+import 'package:emojis_ns/emoji_ns.dart';
 
 main() {
   print('I ${Emojis.greenHeart} ${Emojis.directHit}'); // I 💚 🎯
@@ -29,7 +29,8 @@ main() {
   print(disassembled); // ['🔧', '🧑']
 
   // assemble some emojis
-  String assembled = Emoji.assemble([Emojis.man, Emojis.man, Emojis.girl, Emojis.boy]);
+  String assembled =
+      Emoji.assemble([Emojis.man, Emojis.man, Emojis.girl, Emojis.boy]);
   print(assembled); // 👨‍👨‍👧‍👦️
 
   String blackThumbsUp = '👍';
@@ -38,24 +39,27 @@ main() {
   print(witheThumbsUp); // 👍🏻
 
   // A Woman Police Officer With Brown Skin
-  String femaleCop =  Emojis.womanPoliceOfficerMediumDarkSkinTone;
+  String femaleCop = Emojis.womanPoliceOfficerMediumDarkSkinTone;
   // Make that woman to just a Woman Police Officer with no special skin color
   String newFemaleCop = Emoji.stabilize(femaleCop);
-  print('$femaleCop => $newFemaleCop'); //👮🏾‍♀️ => 👮‍♀️ 
+  print('$femaleCop => $newFemaleCop'); //👮🏾‍♀️ => 👮‍♀️
 
   // gender-neutral
   String aCop = Emoji.stabilize(femaleCop, skin: false, gender: true);
   print('$femaleCop => $aCop'); //👮🏾‍♀️=> 👮🏾 no gender! still medium dark
 
-  final loveEmojis = Emoji.byKeyword('love'); // returns list of lovely emojis :)
+  final loveEmojis =
+      Emoji.byKeyword('love'); // returns list of lovely emojis :)
   print(loveEmojis);
   // (🥰, 😍, 😘, 😚, 😙, 🤗, 😻, 😽, 💋, 💌, 💘, 💝, 💖, 💗, 💓, 💞, 💕, ..., 💄, ♾)
 
-  final foodCategory =  Emoji.byGroup(EmojiGroup.foodDrink); // returns emojis in Food and Drink group
+  final foodCategory = Emoji.byGroup(
+      EmojiGroup.foodDrink); // returns emojis in Food and Drink group
   print(foodCategory);
   // (🍇, 🍈, 🍉, 🍊, 🍋, 🍌, 🍍, 🥭, 🍎, 🍏, 🍐, 🍑, 🍒, 🍓, 🥝, 🍅, 🥥, 🥑, ...)
 
-  Iterable<Emoji> moneySubgroupEmojis = Emoji.bySubgroup(EmojiSubgroup.money); // returns emojis in Money subgroup
+  Iterable<Emoji> moneySubgroupEmojis =
+      Emoji.bySubgroup(EmojiSubgroup.money); // returns emojis in Money subgroup
   print(moneySubgroupEmojis);
   // (💰, 💴, 💵, 💶, 💷, 💸, 💳, 🧾, 💹)
 }
